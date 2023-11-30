@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de div e section</title>
+    <style>
+        /* Estilos de exemplo para destacar visualmente as divs e sections */
+
+        /* Estilizando todas as divs */
+        div {
+            border: 2px solid #333; /* Borda de 2px sólida com a cor #333 */
+            padding: 10px; /* Adicionando um espaçamento interno de 10px */
+            margin-bottom: 10px; /* Adicionando uma margem inferior de 10px */
+        }
+
+        /* Estilizando todas as sections */
+        section {
+            background-color: #f0f0f0; /* Cor de fundo cinza claro */
+            padding: 10px; /* Adicionando um espaçamento interno de 10px */
+            margin-bottom: 10px; /* Adicionando uma margem inferior de 10px */
+        }
+
+        /* Estilizando a classe "linha" que será aplicada a uma div que contém duas divs */
+        .linha {
+            display: flex; /* Usando o modelo flexível para organizar as divs em uma linha */
+            justify-content: space-around; /* Distribuindo o espaço uniformemente entre as divs */
+            margin-bottom: 20px; /* Adicionando uma margem inferior de 20px à linha */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Div 1 -->
+    <div>
+        <h2>Div Exemplo 1</h2>
+        <p>Este é um exemplo de conteúdo dentro da primeira div.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <section>
+        <h2>Section Exemplo 1</h2>
+        <p>Este é um parágrafo dentro da primeira seção que representa uma parte temática da página.</p>
+    </section>
+
+    <!-- Div 2 -->
+    <!-- Aplicando a classe "linha" para organizar as duas divs em uma linha -->
+    <div class="linha">
+        <div>
+            <h2>Div Exemplo 2</h2>
+            <p>Este é um exemplo de conteúdo dentro da segunda div.</p>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Div Exemplo 3</h2> <!-- Corrigindo o número da div para tornar os IDs únicos -->
+            <p>Este é um exemplo de conteúdo dentro da terceira div.</p>
+            <ul>
+                <li>Item C</li>
+                <li>Item D</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <section>
+        <h2>Section Exemplo 2</h2>
+        <p>Este é um parágrafo dentro da segunda seção que representa outra parte temática da página.</p>
+    </section>
+
+</body>
+
+</html>

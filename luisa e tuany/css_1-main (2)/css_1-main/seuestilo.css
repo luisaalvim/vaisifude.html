@@ -1,0 +1,35 @@
+html {
+    background-color: #424142; /* Substitua #424142 pela cor desejada */
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #0e4d58; /* Substitua #0e4d58 pela cor desejada */
+    padding: 0 20px 20px 20px;
+    border: 3px solid black;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #f08902; /* Substitua #f08902 pela cor desejada */
+    text-shadow: 2px 2px 2px black; /* Adicione a cor para o efeito de sombra do texto */
+    text-align: center;
+    font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    margin: 25px 25px;
+    padding: 25px;
+    text-align: justify;
+    font-size: 25px;
+    color: #ffffff; /* Substitua #ffffff pela cor desejada */
+    text-shadow: 2px 2px 1px black; /* Adicione a cor para o efeito de sombra do texto */
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}

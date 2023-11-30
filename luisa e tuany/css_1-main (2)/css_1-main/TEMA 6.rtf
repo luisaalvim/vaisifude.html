@@ -1,0 +1,475 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset128 CIDFont+F1;}{\f2\fnil Calibri;}}
+{\colortbl ;\red255\green255\blue0;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl240\slmult1\qj\f0\fs32\lang22 Tema 6: CSS\lang1046  \lang22 (Cascating Styles Sheets\lang1046  - \lang22 Folhas de Estilo em Cascata)\par
+\par
+\b\fs24 O que s\'e3o CSS\par
+\b0\fs22 A CSS (Folhas de Estilo em Cascata) \'e9 uma linguagem usada para \highlight1\b estilizar documentos de forma leve e elegante\highlight0\b0 , ela possibilita determinar o comportamento de um determinado documento em telas de diferentes dispositivos. Ela \'e9 altamente compat\'edvel com o HTML, fazendo parte de praticamente todas as p\'e1ginas da web, fazemos o uso das css para estilizar os documentos HTML, visando sempre a rapidez e efic\'e1cia na visualiza\'e7\'e3o dos elementos. As CSS \highlight1\b permitem aplicar estilos de modo seletivo em elementos de documentos HTML\highlight0\b0 .\par
+Por exemplo, para selecionar todas as tags (elementos) t\'edtulo de uma p\'e1gina e fazer qualquer tipo de altera\'e7\'e3o e estiliza\'e7\'e3o, com as CSS n\'e3o h\'e1 necessidade de modificar elemento individualmente (como era feito antigamente), posso simplesmente determinar no c\'f3digo CSS \ul\b que os t\'edtulos ter\'e3o um determinado comportamento\ulnone\b0 , e a altera\'e7\'e3o \'e9 feita em todos. Para que a p\'e1gina em HTML possa fazer uso dos estilos em CSS, \'e9 necess\'e1rio inserir na tag \b <head> um link para a p\'e1gina em CSS onde est\'e3o configurados os estilos\b0 . Veja no exemplo:\par
+\fs24 <html>\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+\b     <link rel="stylesheet" type="text/css" href="estilo.css">\par
+\b0 </head>\par
+<body>\par
+    <!-- Conte\'fado aqui-->\par
+</body>\par
+</html>\par
+\par
+\fs22 Podemos notar na linha 4 da imagem acima, indicando a inser\'e7\'e3o da p\'e1gina estilo.css no atributo href, fazendo assim o link para que essa p\'e1gina seja usada esses estilos. O link \'e9 uma \highlight1\b tag utilizada para indicar ao html que uma p\'e1gina externa ser\'e1 adicionada, nesse caso usamos o essa tag <link rel=\f1\rdblquote\f0 stylesheet\f1\rdblquote\f0 > indicando que esse link \'e9 relativo \'e0s folhas de estilos do tipo (type) text/css. E por \'faltimo fazemos o uso do href=\rdblquote  nome_da_pagina.css\rdblquote , para indicar o local da p\'e1gina do estilo CSS\highlight0\b0 .\fs24\par
+\fs32\par
+\fs22 Vamos ver um exemplo simples do uso do html na tag <p> do html:\par
+\par
+\b p \{\par
+    color: blue;\par
+\}\par
+\b0\par
+Podemos notar nesse exemplo onde o elemento <p> foi configurado para que \b tenha a cor\par
+blue(azul)\b0  em todos os elementos que a p\'e1gina est\'e1 linkada. Toda estrutura \'e9 chamada de conjunto de regras (em geral usamos o termo \ldblquote regra\rdblquote , por ser mais curto). Vamos conhecer a anatomia do conjunto de regras do CSS.\par
+\par
+\b SELETOR (SELECTOR) \f2\endash\f0  \b0 O nome do elemento (tag) em HTML no come\'e7o do conjunto de regras. Ele \'e9 respons\'e1vel por selecionar o(s) elemento(s) a serem aplicados os estilos (nesse caso, os elementos <p>). Para dar estilo a um outro elemento, \'e9 s\'f3 mudar o seletor.\par
+\par
+\b DECLARA\'c7\'c3O (DECLARATION) \f2\endash\f0  \b0 Uma regra simples como color: red; especifica quais das propriedades do elemento deseja estilizar. Nesse caso ir\'e1 mudar a cor do elemento para vermelho.\par
+\par
+\b PROPRIEDADES (PROPERTY) \f2\endash\f0  \b0 Forma pela qual usamos para estilizar um elemento em HTML. Nesse caso, color \'e9 uma propriedade dos elementos <p>. Em CSS, podemos escolher quais propriedades queremos afetar com sua regra.\par
+\par
+\b VALOR DA PROPRIEDADE (PROPERTY VALUE) \f2\endash\f0  \b0 Com o valor da propriedade podemos escolher uma, dentre muitas apar\'eancias poss\'edveis para uma determinada propriedade (cada propriedade em particular, possui in\'fameros valores de distintos).\par
+\par
+p = Seletor;\par
+color: red = Declara\'e7\'e3o;\par
+color = Propriedades;\par
+red = valor da propriedade.\par
+\par
+Acima nota-se a estrutura do conjunto de regras que se faz necess\'e1rio para a aplica\'e7\'e3o do CSS, temos primeiro que indicar o seletor (nesse caso o elemento <p>), para definir as propriedades desse seletor sempre devemos definir a propriedade entre chaves ( \highlight1\b\{ \}\highlight0  \b0 ) , depois a declara\'e7\'e3o da propriedade seguida de dois pontos ( \highlight1\b :\highlight0\b0  ), e atribuindo o valor da propriedade, finalizando a linha de cada declara\'e7\'e3o com o ponto e v\'edrgula ( \highlight1\b ;\highlight0\b0  ). Devemos lembrar que essa regra deve ser usada em todos os elementos que ser\'e3o estilizados com o CSS, mudando algumas defini\'e7\'f5es pontualmente.\par
+\par
+Em casos que \'e9 necess\'e1rio a estiliza\'e7\'e3o de mais de uma propriedade, \'e9 s\'f3 definir na linha de baixo uma nova propriedade, declarando o valor dela. Veja o exemplo abaixo:\par
+\par
+\b p \{\par
+    color: red;\par
+    width: 500px;\par
+    border: 1px solid black;\par
+\}\par
+\b0\par
+Este c\'f3digo define a cor do texto como vermelho, a largura como 500 pixels e uma borda de 1 pixel s\'f3lida preta para o elemento especificado.\par
+\par
+
+\pard\qj Podemos perceber que definimos o \highlight1 estilo do elemento <p> com o uso de tr\'eas propriedades\par
+
+\pard\sl240\slmult1\qj diferentes\highlight0 .\par
+\par
+\b html \{\par
+    background-color: skyblue;\par
+\}\par
+\par
+p \{\par
+    color: black;\par
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;\par
+\}\par
+\par
+h1 \{\par
+    color: teal;\par
+    text-shadow: slategrey;\par
+\}\par
+\b0\par
+Nesse exemplo acima, podemos notar que foram inseridos no CSS \highlight1\b tr\'eas elementos, o elemento HTML, onde \'e9 aplicado em todo o documento HTML, o elemento p e o elemento h1.\highlight0\b0  Podemos fazer diversas altera\'e7\'f5es deixando nossas p\'e1ginas muito mais atrativas visualmente com o CSS. \'c9 poss\'edvel tamb\'e9m definir um mesmo conjunto de regras para m\'faltiplos seletores, vamos ver um exemplo:\par
+\par
+\b html \{\par
+    background-color: skyblue;\par
+\}\par
+\par
+p, h1, li \{\par
+    color: red;\par
+\}\par
+\b0\par
+
+\pard\qj Na imagem acima definimos \highlight1\b tr\'eas seletores com o mesmo conjunto de regras\highlight0\b0 , ou seja, mesma propriedade e valor para os tr\'eas, apenas separando-os com uma v\'edrgula ( , ). Nesse exemplo determinamos que os elementos <p>, <li> e <h1>, ser\'e3o apresentados na p\'e1gina em vermelho.\par
+\par
+
+\pard\sl240\slmult1\qj\b\fs24 Diferentes Tipos de Seletores\par
+\par
+\b0\fs22 Existem diversos tipos de seletores diferentes, vamos conhecer os seletores de elementos de um determinado tipo nos documentos HTML.\par
+Por\'e9m \'e9 preciso fazer sele\'e7\'f5es mais especificas, veja alguns dos tipos mais comuns de seletores.\par
+\par
+\fs20 | \b Nome do Seletor \b0 | Tipo | \highlight1 Exemplo\highlight0  |\par
+|------------------|------|---------|\par
+| \b Tag ou Seletor de Tipo \b0 | Todos os elementos HTML de determinado tipo. \highlight1 | `p` | "Seleciona p"\par
+\highlight0 | \b Seletor de ID \b0 | O elemento na p\'e1gina com o ID especificado. \'c9 uma boa pr\'e1tica usar um elemento por ID. \highlight1 | `#id` | Seleciona <p id="meu-id>\highlight0\par
+| \b Seletor de Classe \b0 | O(s) elemento(s) na p\'e1gina com a classe especificada. V\'e1rias inst\'e2ncias de classe podem aparecer em uma p\'e1gina. \highlight1 | `.class` | Seleciona <p class="minha-classe>\highlight0\par
+| \b Seletor de Atributo \b0 | O(s) elemento(s) na p\'e1gina com o atributo especificado. \highlight1 | `img[src]` | Seleciona <img src="minha_imagem,png">. Lembrando seleciona o atriburo serc e n\'e3o o img\highlight0\par
+| \b Pseudo-Classe \b0 | O(s) elemento(s) especificado(s), mas somente quando estiver no estado especificado, como por exemplo, quando o mouse est\'e1 sobre ele. \highlight1 | `a:hover` | Seleciona <a>, mas somente quando o mouse est\'e1 em cima do link.\highlight0\par
+\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Exemplo de Seletores CSS</title>\par
+\b     <style>\par
+        /* Tag ou Seletor de Tipo */\par
+        p \{\par
+            color: blue;\par
+        \}\par
+\par
+        /* Seletor de ID */\par
+        #meuId \{\par
+            background-color: yellow;\par
+        \}\par
+\par
+        /* Seletor de Classe */\par
+        .minhaClasse \{\par
+            font-weight: bold;\par
+        \}\par
+\par
+        /* Seletor de Atributo */\par
+        img[src] \{\par
+            border: 2px solid green;\par
+        \}\par
+\par
+        /* Pseudo-Classe */\par
+        a:hover \{\par
+            text-decoration: underline;\par
+            color: red; /* Adicionada nova propriedade 'color' */\par
+        \}\par
+    </style>\par
+\b0 </head>\par
+<body>\par
+\par
+    <!-- Tag ou Seletor de Tipo -->\par
+    <p>Isso \'e9 um par\'e1grafo.</p>\par
+\par
+    <!-- Seletor de ID -->\par
+    <div id="meuId">\par
+        Este \'e9 um elemento com ID "meuId".\par
+    </div>\par
+\par
+    <!-- Seletor de Classe -->\par
+    <p class="minhaClasse">Este par\'e1grafo tem a classe "minhaClasse".</p>\par
+\par
+    <!-- Seletor de Atributo -->\par
+    <img src="minha_imagem.png" alt="Minha Imagem">\par
+\par
+    <!-- Pseudo-Classe -->\par
+    <a href="#">Isso \'e9 um link</a>\par
+\par
+</body>\par
+</html>\par
+\par
+\b\fs24 Fontes e Textos\par
+\b0\fs22 No CSS podemos vincular \highlight1\b fontes em diferentes formas, uma delas \'e9 um v\'ednculo online de fonte\highlight0\b0 , nesse caso usando o google fonts podemos inserir uma ou mais fam\'edlias de fontes com esse m\'e9todo, vamos ver no c\'f3digo:\par
+\par
+\b <link rel="stylesheet" href="{{\field{\*\fldinst{HYPERLINK http://fonts.googleapis.com/css?family=Open+Sans }}{\fldrslt{http://fonts.googleapis.com/css?family=Open+Sans\ul0\cf0}}}}\f0\fs22 ">\par
+\b0\par
+Nota-se no c\'f3digo acima que vinculamos uma folha de estilo que \ul\b baixa a fam\'edlia de fontes Open Sans junto com a p\'e1gina web\ulnone\b0 , permitindo que seja definido seus elementos HTML usando a pr\'f3pria folha de estilos. No CSS \'e9 poss\'edvel estilizar v\'e1rias propriedades de um mesmo elemento de texto, vamos conhecer agora esses elementos.\par
+\ul\b Na tabela abaixo est\'e3o as possibilidades que podemos definir os estilos das fontes\ulnone\b0 , importante que na hora da pr\'e1tica voc\'ea fa\'e7a testes para descobrir qual melhor estilo para seu documento. \par
+\par
+| PROPRIEDADE         | VALOR DA PROPRIEDADE                                      |\par
+|---------------------|-----------------------------------------------------------|\par
+| Font                | font-style, font-variant, font-weight, font-size, font-family, caption, icon, menu, message-box, smallcaption, status-bar |\par
+| Font-size           | xx-small, x-small, small, medium, large, x-large, xx-large, smaller, larger, inherit, length (%) |\par
+| Font-size-adjust    | None, inherit, number (%)                                  |\par
+| Font-stretch        | normal, wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded, inherit |\par
+| Font-style          | normal, italic, oblique, inherit                            |\par
+| Font-variant        | normal, small-caps, inherit                                 |\par
+| Font-weight         | normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900, inherit |\par
+| Font-family         | Family-name, generic-family, inherit                       |\par
+\par
+A seguir vamos ver a tabela de \ul\b propriedades de texto\ulnone\b0 :\par
+\par
+| PROPRIEDADE             | VALOR DA PROPRIEDADE                                      |\par
+|-------------------------|-----------------------------------------------------------|\par
+| direction               | ltr, rtl, inherit                                         |\par
+| hanging-punctuation     | None, [start, end, adjacent]                               |\par
+| letter-spacing          | normal, length (%)                                       |\par
+| punctuation-trim        | None, [start, end, adjacent]                               |\par
+| text-align              | start, end, left, right, center, justify                   |\par
+| text-align-last         | start, end, left, right, center, justify                   |\par
+| text-decoration         | none, underline, overline, line-through, blink            |\par
+| text-emphasis           | none, [accent, dot, circle, disc] [before, after, length (%)] |\par
+| text-indent             | Length (%)                                                |\par
+| text-justify            | auto, inter-word, inter-ideograph, inter-cluster, distribute, kashida, Tibetan |\par
+| text-outline            | None, color, length                                       |\par
+| text-shadow             | None, color, length                                       |\par
+| text-transform          | none, capitalize, uppercase, lowercase                    |\par
+| text-wrap               | normal, unrestricted, none, suppress                      |\par
+| unicode-bidi            | normal, embed, bidi-override                               |\par
+| white-space             | normal, pre, nowrap, pre-wrap, pre-line                    |\par
+| white-space-collapse    | preserve, collapse, preserve-breaks, discard               |\par
+| word-break              | normal, keep-all, loose, break-strict, break-all           |\par
+| word-spacing            | normal, length (%)                                        |\par
+| word-wrap               | normal, break-word                                        |\par
+\par
+Na tabela anterior \'e9 mostrado a propriedade de texto com seus respectivos valores, dessa forma \'e9 poss\'edvel entender que cada propriedade tem um valor espec\'edfico com uma a\'e7\'e3o espec\'edfica. \ul\b N\'e3o \'e9 necess\'e1rio que saiba todas, o importante \'e9 us\'e1-las de acordo achar melhor em sua folha de estilo, por isso \'e9 recomendado que fa\'e7a testes com cada um desses valores de cada propriedade\ulnone\b0 , assim \'e9 poss\'edvel visualizar o efeito de cada uma delas.\par
+\par
+\fs20 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Exemplo de Propriedades de Texto e Fonte</title>\par
+    <style>\par
+        body \{\par
+            font-family: 'Open Sans', sans-serif; /* Exemplo de font-family */\par
+            direction: ltr; /* Exemplo de direction */\par
+            text-align: center; /* Exemplo de text-align */\par
+        \}\par
+\par
+        h1 \{\par
+            font-size: 24px; /* Exemplo de font-size */\par
+            letter-spacing: 2px; /* Exemplo de letter-spacing */\par
+            text-transform: uppercase; /* Exemplo de text-transform */\par
+        \}\par
+\par
+        p \{\par
+            text-decoration: underline; /* Exemplo de text-decoration */\par
+            word-spacing: 5px; /* Exemplo de word-spacing */\par
+        \}\par
+\par
+        .highlight \{\par
+            text-shadow: 2px 2px 2px #333; /* Exemplo de text-shadow */\par
+        \}\par
+    </style>\par
+    <link rel="stylesheet" href="{{\field{\*\fldinst{HYPERLINK http://fonts.googleapis.com/css?family=Open+Sans }}{\fldrslt{http://fonts.googleapis.com/css?family=Open+Sans\ul0\cf0}}}}\f0\fs20 ">\par
+</head>\par
+<body>\par
+\par
+    <h1>Exemplo de Propriedades de Texto e Fonte</h1>\par
+    \par
+    <p>Este \'e9 um par\'e1grafo com <span class="highlight">algumas partes destacadas</span>.</p>\par
+\par
+</body>\par
+</html>\par
+\fs22\par
+\b\fs24 Desenvolvimento e Aplica\'e7\'e3o\par
+\b0\fs22 Vamos come\'e7ar a utilizar o CSS na pr\'e1tica para fixar melhor esse conjunto de regras e seu modo de aplica\'e7\'e3o.\par
+\par
+\fs20 <!DOCTYPE html>\par
+<html lang="pt-br">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Estilos em CSS</title>\par
+    <link rel="stylesheet" href="seuestilo.css"> <!-- Substitua "seuestilo.css" pelo nome do seu arquivo CSS -->\par
+</head>\par
+<body>\par
+\par
+    <h1>Aplicando Folhas de Estilo no HTML</h1>\par
+    <img src="sua-imagem.png" alt="Imagem Logo"> <!-- Substitua "sua-imagem.png" pelo caminho da sua imagem -->\par
+\par
+    <p>Assim como o HTML, o CSS n\'e3o \'e9 realmente uma linguagem de programa\'e7\'e3o.\par
+        Tamb\'e9m n\'e3o \'e9 uma linguagem de marca\'e7\'e3o - \'e9 uma linguagem de folhas de estilos.\par
+        Isso significa que o CSS permite aplicar estilos seletivamente a elementos em documentos HTML.</p>\par
+\par
+</body>\par
+</html>\par
+\par
+\b\fs22 CSS:\par
+\par
+Alterando a cor de fundo:\par
+\par
+\b0\fs20 html \{\par
+    background-color: #424142; /* Substitua #424142 pela cor desejada */\par
+\}\par
+\par
+\b\fs24 Alterando o background da p\'e1gina:\par
+\b0\fs20\par
+body \{\par
+    width: 600px;\par
+    margin: 0 auto;\par
+    background-color: #0e4d58; /* Substitua #0e4d58 pela cor desejada */\par
+    padding: 0 20px 20px 20px;\par
+    border: 3px solid black;\par
+\}\par
+\par
+\fs22 Agora para o elemento <body>. H\'e1 algumas declara\'e7\'f5es aqui, ent\'e3o vamos passar por elas uma a uma:\par
+\b width: 600px; \f2\emdash\f0  \b0 Isso for\'e7a o corpo a ter 600 pixels de largura.\par
+\b margin: 0 auto; \f2\emdash\f0  \b0 Quando voc\'ea define dois valores em uma propriedade como margin ou padding, o primeiro valor afeta a parte superior do elemento e a parte inferior (tornando-os 0 nesse caso), e no segundo valor os lados esquerdos e direito (aqui, auto \'e9 um valor especial que divide o espa\'e7o horizontal uniformemente entre esquerda e direita). Voc\'ea tamb\'e9m pode utilizar um, tr\'eas ou quatro valores, como documentado aqui.\par
+\b background-color; \f2\emdash\f0  \b0 Como antes, isso define a cor de fundo do elemento.\par
+\b padding: 0 20px 20px 20px; \f2\emdash\f0  \b0 Temos quatro valores definidos no padding, para criar um pouco de espa\'e7o em torno do nosso conte\'fado. Dessa vez, estamos definindo sem padding na parte superior do corpo, e 20 pixels no lado esquerdo, na parte inferior e no lado direito. Os valores definem a parte superior, o lado direito, a parte inferior e o lado esquerdo, nessa ordem. Como com a margin, voc\'ea tamb\'e9m pode usar um, dois, ou tr\'eas valores.\par
+\b border: 3px solid black; \f2\emdash\f0  \b0 Isso simplesmente define uma borda preta s\'f3lida de 3 pixels de largura em todos os lados do corpo.\par
+\par
+\fs20 h1 \{\par
+    margin: 0;\par
+    padding: 20px 0;\par
+    color: #f08902; /* Substitua #f08902 pela cor desejada */\par
+    text-shadow: 2px 2px 2px black; /* Adicione a cor para o efeito de sombra do texto */\par
+    text-align: center;\par
+    font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;\par
+\}\par
+\par
+\b\fs22 Margin: \b0 Definimos o margin do h1 em 0, para tirar os espa\'e7os da margem do texto.\par
+\b Padding: \b0 O padding no texto \'e9 importante para espa\'e7ar dos outros elementos da p\'e1gina.\par
+\b Color: \b0 Definimos a cor do texto.\par
+\b Text-shadow \f2\endash\f0  \b0 Uma propriedade bastante interessante que usaremos aqui \'e9 o text-shadow, que aplica uma sombra ao conte\'fado de texto do elemento. Seus quatro valores s\'e3o os seguintes:\par
+
+\pard\li720\sl240\slmult1\qj\f2\bullet\f0  O primeiro valor em pixel define o deslocamento horizontal da sombra do texto \f2\emdash\f0  at\'e9 onde ele se move: um valor negativo deve mov\'ea-la para a esquerda.\par
+\f2\bullet\f0  O segundo valor em pixel define o deslocamento vertical da sombra do texto \f2\emdash\f0  o quanto ela se move para baixo, neste exemplo; um valor negativo deve mov\'ea-la para cima.\par
+\f2\bullet\f0  O terceiro valor em pixel define o raio de desfoque da sombra \f2\emdash\f0  um valor maior significar\'e1 uma sombra mais borrada.\par
+\f2\bullet\f0  O quarto valor define a cor base da sombra.\par
+
+\pard\sl240\slmult1\qj\b Text-align: \b0 - Essa propriedade centraliza o texto.\par
+\b Font-family: \b0 - Definimos uma fam\'edlia de fontes, ele funciona em ordem, nesse caso se a fonte Cambria n\'e3o estiver instalada no computador ou no servidor (caso o site j\'e1 esteja hospedado), ele define a fonte Georgia para uso, e assim sucessivamente.\par
+\par
+\fs20 img \{\par
+    display: block;\par
+    margin: 0 auto;\par
+\}\par
+\par
+
+\pard\qj\fs22 Com essa propriedade centralizamos a imagem para melhorar a apar\'eancia. N\'f3s poder\'edamos usar novamente o truque margin: 0 auto que aprendemos anteriormente para o corpo, mas tamb\'e9m precisamos fazer outra coisa. O elemento \b <body> \b0\'e9 em n\'edvel de bloco, o que significa que ocupa espa\'e7o na p\'e1gina e pode ter margens e outros valores de espa\'e7amento aplicados a ele. Imagens, por outro lado, \b s\'e3o elementos em linha\b0 , o que significa que n\'e3o podem ter margens. Ent\'e3o, para aplicar margens a uma imagem, temos que dar o comportamento de n\'edvel de bloco a imagem usando display: block.\fs20\par
+
+\pard\sl240\slmult1\qj\par
+p \{\par
+    margin: 25px 25px;\par
+    padding: 25px;\par
+    text-align: justify;\par
+    font-size: 25px;\par
+    color: #ffffff; /* Substitua #ffffff pela cor desejada */\par
+    text-shadow: 2px 2px 1px black; /* Adicione a cor para o efeito de sombra do texto */\par
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;\par
+\}\par
+\par
+\fs22 Nos par\'e1grafos aqui definimos propriedades para melhor alocar o texto na p\'e1gina, nota-se que as propriedades s\'e3o bem parecidas com as do elemento <h1>;\par
+\par
+\b Margin: - \b0 Definimos o margin com 25 pixels dos lados, para melhorar e espa\'e7ar o texto.\par
+\b Padding: - \b0 Com o padding deixamos um espa\'e7o interno entre o bloco do texto.\par
+\b Text-align: \f2\endash\f0  \b0 Aqui nessa propriedade definimos que o par\'e1grafo seja justificado.\par
+\b Font-size: \f2\endash\f0  \b0 Com a font-size deixamos a fonte do par\'e1grafo com tamanho de 25 pixels.\par
+\b Color: - \b0 Mudamos a cor do texto para branco, dando destaque no texto e contrastando com o fundo.\par
+\b Text-shadow: - \b0 Colocamos uma sombra em preto no texto para dar um contraste com a cor branca.\par
+\b Font-family: \f2\endash\f0  \b0 Definimos a fam\'edlia de fontes para nosso par\'e1grafo, assumindo a ordem de import\'e2ncia em caso a fonte n\'e3o esteja instalada, automaticamente assume a pr\'f3xima fonte da sequ\'eancia.\par
+\par
+Podemos notar \b que as defini\'e7\'f5es no c\'f3digo CSS s\'e3o de muita import\'e2ncia para uma p\'e1gina\par
+HTML, sem o uso do CSS \'e9 praticamente invi\'e1vel fazer o mesmo estilo em HTML puro\b0 , por isso o uso do CSS se fez muito importante desde a sua cria\'e7\'e3o.\par
+\par
+\fs24 RESPONDA:\par
+\fs22 1) O que \'e9 CSS?\par
+2) O que faz um CSS dentro de um documento em HTML?\par
+3) Qual a sintaxe para incorporar uma folha de estilo dentro de uma p\'e1gina em HTML?\par
+4) Quais os principais tipos de seletores em CSS?\par
+5) Qual a fun\'e7\'e3o da propriedade text-align?\par
+6) Qual propriedade CSS preciso usar para mudar a cor do texto de um elemento <p> do HTML?\par
+7) Para mudar a cor do background do HTML, qual a sintaxe?\par
+8) Como funciona a propriedade text-shadow?\par
+9) As propriedades __________ e __________ s\'e3o essenciais para definir as dimens\'f5es de um elemento, como largura e altura.\par
+10) Qual a diferen\'e7a entre margin e padding?\par
+\par
+\b **Respostas:**\par
+\b0\par
+\b 1) **O que \'e9 CSS?**\par
+\b0    - CSS (Cascading Style Sheets) \'e9 uma linguagem de estilo usada para estilizar documentos HTML. Ela permite determinar o layout e a apar\'eancia de elementos HTML em uma p\'e1gina da web. O CSS separa a apresenta\'e7\'e3o do conte\'fado, facilitando a manuten\'e7\'e3o e o design consistente em v\'e1rias p\'e1ginas.\par
+\par
+\b 2) **O que faz um CSS dentro de um documento em HTML?**\par
+\b0    - O CSS \'e9 utilizado para aplicar estilos e layouts aos elementos HTML em uma p\'e1gina. Ele controla aspectos como cores, fontes, espa\'e7amentos, tamanhos, posicionamento e outros atributos visuais, permitindo a cria\'e7\'e3o de designs atraentes e consistentes em toda a p\'e1gina ou site.\par
+\par
+\b 3) **Qual a sintaxe para incorporar uma folha de estilo dentro de uma p\'e1gina em HTML?**\par
+\b0    - A sintaxe para incorporar uma folha de estilo dentro de uma p\'e1gina HTML \'e9 atrav\'e9s da tag `<link>` no elemento `<head>`. Exemplo:\par
+     ```html\par
+\highlight1\b      <head>\par
+         <link rel="stylesheet" type="text/css" href="estilo.css">\par
+     </head>\par
+\highlight0\b0      ```\par
+\par
+\b 4) **Quais os principais tipos de seletores em CSS?**\par
+\b0    - Os principais tipos de seletores em CSS incluem:\par
+     - Seletor de Tipo (Tag)\par
+     - Seletor de ID\par
+     - Seletor de Classe\par
+     - Seletor de Atributo\par
+     - Pseudo-Classe\par
+\par
+\b 5) **Qual a fun\'e7\'e3o da propriedade text-align?**\par
+\b0    - A propriedade `text-align` \'e9 usada para definir a alinhamento horizontal do texto dentro de um elemento. Os valores comuns s\'e3o `left` (esquerda), `right` (direita), `center` (centro) e `justify` (justificado).\par
+\par
+\b 6) **Qual propriedade CSS preciso usar para mudar a cor do texto de um elemento `<p>` do HTML?**\par
+\b0    - A propriedade CSS para mudar a cor do texto \'e9 `color`. Exemplo:\par
+     ```css\par
+\highlight1\b      p \{\par
+         color: blue;\par
+     \}\par
+\highlight0\b0      ```\par
+\par
+\b 7) **Para mudar a cor do background do HTML, qual a sintaxe?**\par
+\b0    - A sintaxe para mudar a cor do background \'e9 usando a propriedade `background-color`. Exemplo:\par
+     ```css\par
+\highlight1\b      html \{\par
+         background-color: skyblue;\par
+     \}\par
+\highlight0\b0      ```\par
+\par
+\b 8) **Como funciona a propriedade text-shadow?**\par
+\b0    - A propriedade `text-shadow` adiciona uma sombra ao texto. Seus valores definem o deslocamento horizontal, deslocamento vertical, raio de desfoque e a cor da sombra. Exemplo:\par
+     ```css\par
+\highlight1\b      h1 \{\par
+         text-shadow: 2px 2px 2px black;\par
+     \}\par
+\highlight0\b0      ```\par
+\par
+\b 9) **As propriedades __________ e __________ s\'e3o essenciais para definir as dimens\'f5es de um elemento, como largura e altura.**\par
+\b0    - As propriedades `width` e `height` s\'e3o essenciais para definir as dimens\'f5es de um elemento.\par
+\par
+\b 10) **Qual a diferen\'e7a entre margin e padding?**\par
+\b0     - `Margin` \'e9 a dist\'e2ncia entre a borda do elemento e as bordas externas dos elementos adjacentes, afetando o espa\'e7amento entre os elementos. `Padding` \'e9 a dist\'e2ncia entre o conte\'fado do elemento e sua borda, afetando o espa\'e7amento interno do elemento. Em resumo, `margin` lida com espa\'e7amento externo, enquanto `padding` lida com espa\'e7amento interno.\par
+\par
+\b ANEXOS:\par
+\b0\par
+\b Abaixo est\'e3o as propriedades de texto listadas na tabela com explica\'e7\'f5es curtas ao lado de cada uma:\par
+\b0\par
+1. **`direction`:** Define a dire\'e7\'e3o do texto, podendo ser da esquerda para a direita (`ltr`), da direita para a esquerda (`rtl`) ou herdada (`inherit`).\par
+\par
+2. **`hanging-punctuation`:** Controla a pontua\'e7\'e3o que "pendura" para fora da caixa do texto. Pode ser configurado como `None` ou especificar valores para o in\'edcio, fim e adjacentes.\par
+\par
+3. **`letter-spacing`:** Define o espa\'e7amento entre caracteres, podendo ser normal ou um valor em porcentagem.\par
+\par
+4. **`punctuation-trim`:** Controla a pontua\'e7\'e3o que \'e9 cortada na quebra de linha. Pode ser configurado como `None` ou especificar valores para o in\'edcio, fim e adjacentes.\par
+\par
+5. **`text-align`:** Define o alinhamento horizontal do texto, como in\'edcio, fim, esquerda, direita, centro ou justificado.\par
+\par
+6. **`text-align-last`:** Define o alinhamento do \'faltimo bloco de texto em um cont\'eainer, similar ao `text-align`.\par
+\par
+7. **`text-decoration`:** Adiciona decora\'e7\'f5es ao texto, como underline, overline, line-through ou blink.\par
+\par
+8. **`text-emphasis`:** Adiciona \'eanfase ao texto, como accent, dot, circle ou disc, com op\'e7\'f5es para antes, depois e comprimento.\par
+\par
+9. **`text-indent`:** Define o recuo da primeira linha do texto em rela\'e7\'e3o \'e0 margem.\par
+\par
+10. **`text-justify`:** Controla a justifica\'e7\'e3o do texto entre as linhas, podendo ser autom\'e1tica, entre palavras, ideogramas, clusters, distribu\'edda, kashida ou tibetana.\par
+\par
+11. **`text-outline`:** Adiciona um contorno ao texto, com op\'e7\'f5es para nenhum, cor ou comprimento.\par
+\par
+12. **`text-shadow`:** Adiciona uma sombra ao texto, permitindo especificar a cor e o comprimento do desfoque.\par
+\par
+13. **`text-transform`:** Transforma o texto para mai\'fasculas, min\'fasculas ou capitalizado.\par
+\par
+14. **`text-wrap`:** Controla como o texto deve ser quebrado em v\'e1rias linhas, podendo ser normal, sem restri\'e7\'f5es, nenhum ou suprimido.\par
+\par
+15. **`unicode-bidi`:** Controla a dire\'e7\'e3o do texto bidirecional, podendo ser normal, incorporada ou substitu\'edda.\par
+\par
+16. **`white-space`:** Define como o espa\'e7o em branco deve ser tratado, podendo ser normal, pr\'e9-formatado, sem quebra, com quebra pr\'e9-formatada ou preenchido.\par
+\par
+17. **`white-space-collapse`:** Controla o colapso de espa\'e7os em branco, podendo preservar, colapsar, preservar quebras ou descartar.\par
+\par
+18. **`word-break`:** Define como as quebras de palavra devem ser tratadas, podendo ser normal, manter tudo, solto, rigoroso ou quebrar tudo.\par
+\par
+19. **`word-spacing`:** Define o espa\'e7amento entre palavras, podendo ser normal ou um valor em porcentagem.\par
+\par
+20. **`word-wrap`:** Controla como as palavras devem ser quebradas quando n\'e3o cabem na largura dispon\'edvel, podendo ser normal ou quebrar a palavra.\par
+\par
+\b Abaixo est\'e3o as propriedades de fonte listadas na tabela com explica\'e7\'f5es curtas ao lado de cada uma:\par
+\b0\par
+1. **`Font`:** Esta propriedade compreende v\'e1rias subpropriedades, incluindo `font-style`, `font-variant`, `font-weight`, `font-size`, e `font-family`. Essas subpropriedades s\'e3o usadas para definir o estilo, variante, peso, tamanho e fam\'edlia da fonte, respectivamente. Outras subpropriedades, como `caption`, `icon`, `menu`, `message-box`, `smallcaption` e `status-bar`, tamb\'e9m podem ser usadas para definir a fonte em contextos espec\'edficos.\par
+\par
+2. **`Font-size`:** Define o tamanho da fonte, podendo ser especificado em valores fixos (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`), valores relativos (`smaller`, `larger`), ou valores percentuais (`length (%)`). A op\'e7\'e3o `inherit` herda o tamanho da fonte do elemento pai.\par
+\par
+3. **`Font-size-adjust`:** Controla o ajuste do tamanho da fonte em rela\'e7\'e3o \'e0 altura da fonte dispon\'edvel. Pode ser configurado como `None`, `inherit`, ou um n\'famero em porcentagem.\par
+\par
+4. **`Font-stretch`:** Define a largura da fonte, podendo ser normal, mais ampla (`wider`), mais estreita (`narrower`), ou valores espec\'edficos de ultra-condensada a ultra-expandida. A op\'e7\'e3o `inherit` herda a largura da fonte do elemento pai.\par
+\par
+5. **`Font-style`:** Define o estilo da fonte, podendo ser normal, it\'e1lico (`italic`), ou obl\'edquo (`oblique`). A op\'e7\'e3o `inherit` herda o estilo da fonte do elemento pai.\par
+\par
+6. **`Font-variant`:** Define a variante da fonte, podendo ser normal ou small caps (`small-caps`). A op\'e7\'e3o `inherit` herda a variante da fonte do elemento pai.\par
+\par
+7. **`Font-weight`:** Define a espessura ou peso da fonte, podendo ser normal, negrito (`bold`), mais negrito (`bolder`), mais leve (`lighter`), ou valores num\'e9ricos de 100 a 900. A op\'e7\'e3o `inherit` herda o peso da fonte do elemento pai.\par
+\par
+8. **`Font-family`:** Define a fam\'edlia da fonte, especificando uma ou mais fam\'edlias de fontes. Pode incluir nomes espec\'edficos de fam\'edlia (`Family-name`), fam\'edlias gen\'e9ricas (`generic-family`), ou herdar a fam\'edlia da fonte do elemento pai (`inherit`).\par
+}
+ 

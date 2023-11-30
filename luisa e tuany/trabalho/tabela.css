@@ -1,0 +1,10 @@
+}
+    
+/* Estilo para o layout de um menu de restaurante */
+#menuTable {
+    width: 100%; /* Largura da tabela de menu */
+    margin: 20px auto; /* Centraliza a tabela na página e define margens */
+    background-color: #ffffff; /* Cor de fundo branca para a tabela */
+    border-radius: 8px; /* Borda arredondada na tabela */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave na tabela */
+}
